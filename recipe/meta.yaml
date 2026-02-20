@@ -1,5 +1,5 @@
 {% set name = "asebytes" %}
-{% set version = "0.1.7" %}
+{% set version = "0.2.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/asebytes-{{ version }}.tar.gz
-  sha256: 30e45db919011f95d0205d646cf8b46cce9fb5dbe0d5bcb1f0429eea8fba0bf7
+  sha256: e80bfde31b5bdb4a085bd46ed375ee14fb26ea66d3f89915328262a5b81fc48f
 
 build:
   noarch: python
