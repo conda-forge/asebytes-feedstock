@@ -1,5 +1,5 @@
 {% set name = "asebytes" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/asebytes-{{ version }}.tar.gz
-  sha256: 98b1f91c77941f829e552a1fb5b19451d815c75c2495636d73717c359d12dcb4
+  sha256: c9eea8b389dfd7214f96da6d0698930c5a4532bd67fe538d0ea104beb3e1dcc8
 
 build:
   noarch: python
@@ -18,7 +18,8 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - uv-build >=0.9.6,<0.10.0
+    - hatchling
+    - hatch-vcs
     - pip
   run:
     - python >={{ python_min }}
@@ -26,6 +27,7 @@ requirements:
     - python-lmdb >=1.7.5
     - msgpack-python >=1.1.2
     - msgpack-numpy >=0.4.8
+    - typing_extensions
 
 test:
   imports:
