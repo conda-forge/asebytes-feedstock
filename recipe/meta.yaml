@@ -27,6 +27,7 @@ requirements:
     - python-lmdb >=1.7.5
     - msgpack-python >=1.1.2
     - msgpack-numpy >=0.4.8
+    - typing_extensions
 
 test:
   imports:
