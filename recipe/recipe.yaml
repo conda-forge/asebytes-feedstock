@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: asebytes
+  version: "0.3.1"
+  python_min: "3.11"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/asebytes-${{ version }}.tar.gz
+  sha256: 790dd6f1df2fb80efece74b137582e06dd2aae4752394ee4d283fb46bff37d75
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - ase >=3.26.0
+    - python-lmdb >=1.7.5
+    - msgpack-python >=1.1.2
+    - msgpack-numpy >=0.4.8
+    - typing_extensions
+
+tests:
+  - python:
+      imports:
+        - asebytes
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: LMDB-based storage for ASE.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/zincware/asebytes
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
