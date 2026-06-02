@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: asebytes
-  version: "0.3.2"
+  version: "0.3.3"
   python_min: "3.11"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/asebytes-${{ version }}.tar.gz
-  sha256: 8838177f4e5fd63bfe92eb3bfd4ac2f3120e0099850311ab822c533d211c80ab
+  sha256: 7219c48e3595e6fdd92aa2686543feb3056ca1c8bc02758aec848369b6b78140
 
 build:
   number: 0
